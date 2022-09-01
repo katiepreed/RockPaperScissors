@@ -1,0 +1,47 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(190, 243, 255);
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.container {
+  width: 700px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.button {
+  margin: 30px;
+  background-color: rgb(51, 218, 187);
+  font-size: large;
+  border-style: none;
+  padding: 10px;
+  width: 100px;
+}
+
+.players {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.player {
+  padding: 30px;
+}

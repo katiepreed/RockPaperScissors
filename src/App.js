@@ -36,39 +36,57 @@ const App = () => {
   }
 
   return (
-    <div>
-      <h1> Rock Paper Scissors</h1>
-      <h1>{`AI ${AIAction}`}</h1>
-      <h1>{`user ${userAction}`}</h1>
-      <button
-        onClick={() => {
-          setUserAction(actions[0]);
-          setAIAction(makeAIAction);
-        }}
-      >
-        Rock
-      </button>
-      <button
-        onClick={() => {
-          setUserAction(actions[1]);
-          setAIAction(makeAIAction);
-        }}
-      >
-        Paper
-      </button>
-      <button
-        onClick={() => {
-          setUserAction(actions[2]);
-          setAIAction(makeAIAction);
-        }}
-      >
-        Scissors
-      </button>
-      {result(AIAction, userAction) === "tie" && <h1>Tie </h1>}
-      {result(AIAction, userAction) === "user" && <h1>User </h1>}
-      {result(AIAction, userAction) === "ai" && <h1>AI </h1>}
+    <div className="body">
+      <div className="container">
+        <h1> Rock Paper Scissors</h1>
+        <div className="row">
+          <button
+            className="button"
+            onClick={() => {
+              setUserAction(actions[0]);
+              setAIAction(makeAIAction);
+            }}
+          >
+            Rock
+          </button>
+          <button
+            className="button"
+            onClick={() => {
+              setUserAction(actions[1]);
+              setAIAction(makeAIAction);
+            }}
+          >
+            Paper
+          </button>
+          <button
+            className="button"
+            onClick={() => {
+              setUserAction(actions[2]);
+              setAIAction(makeAIAction);
+            }}
+          >
+            Scissors
+          </button>
+        </div>
+        {userAction !== "" && (
+          <>
+            <div className="players">
+              <h1 className="player">{`AI : ${AIAction}`}</h1>
+              <h1 className="player">{`User : ${userAction}`}</h1>
+            </div>
+            {result(AIAction, userAction) === "tie" && (
+              <h2>Result: It is a Tie! </h2>
+            )}
+            {result(AIAction, userAction) === "user" && (
+              <h2> Result: You win! </h2>
+            )}
+            {result(AIAction, userAction) === "ai" && (
+              <h2> Result: You lose! </h2>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };
-
 export default App;
